@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyprova - Biotechnologies Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              hyprova: {
+                dark: '#0E3338', // Dark Teal
+                darker: '#092529',
+                teal: '#14b8a6', // Mint/Teal
+                tealHover: '#0d9488',
+                text: '#0E3338',
+                textLight: '#4A6FA5',
+              },
+            },
+            animation: {
+              'blob': 'blob 7s infinite',
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in-slow': 'fadeInSlow 2.5s ease-out forwards',
+              'flow-right': 'flowRight 15s linear infinite',
+              'flow-left': 'flowLeft 15s linear infinite',
+              'flow-right-up': 'flowRightUp 15s linear infinite',
+              'flow-right-down': 'flowRightDown 15s linear infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInSlow: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              flowRight: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              flowLeft: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              flowRightUp: {
+                '0%': { transform: 'translate(-100%, 40px)' },
+                '100%': { transform: 'translate(100%, -40px)' },
+              },
+              flowRightDown: {
+                '0%': { transform: 'translate(-100%, -40px)' },
+                '100%': { transform: 'translate(100%, 40px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #ffffff;
+        color: #0E3338;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+      
+      .gradient-line {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.5), transparent);
+      }
+      
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        will-change: opacity, transform;
+      }
+      
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
